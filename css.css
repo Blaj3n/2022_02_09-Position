@@ -1,0 +1,56 @@
+div {
+    box-sizing: border-box;
+    padding: 10px;
+    text-align: justify;
+    border: 1px solid gray;
+    width: 500px;
+}
+.absolut {
+    width: 200px;
+    background-color: greenyellow;
+    position: relative; /*a HTML-ben elfoglalt helyéhez képest mennyivel van eltolva*/
+    top: 200px;
+    /*z-index: -2;*/
+    /*position: absolute; az eltolást attól az elemtől nézi, ahol legutóbb kiadtuk a position:relative parancsot*/
+}
+.szoveg {
+    position: relative;
+}
+.fixed {
+    background-color: lightblue;
+    position: fixed; /*az elemet a böngészőhöz képest helyezi*/
+    bottom:50%; /*top, left*/
+    /*right: 100px;*/
+    width: 100%;
+    z-index: 10; /*az elemeket térben helyezi el egymás elé vagy egymás mögé. Alapértéke: 0*/
+}
+
+nav ul {
+    list-style-type: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 10px; /*grid elemek közötti távolság*/
+}
+nav ul a {
+    text-decoration: none;
+    display: block; /*tudunk neki szélességet adni és ki fogja tölteni a rendelkezésre álló helyet*/
+    background: lightsalmon;
+    padding: 10px;
+}
+nav>ul { /*csak a nav közvetlen gyerekére lesz érvényes*/
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 10px; /*grid elemek közötti távolság*/
+}
+.legordulo {
+    position: relative;
+}
+.legordulo-elem {
+    display: none;
+    position: absolute;
+    z-index: 20;
+}
+
+.legordulo:hover .legordulo-elem {
+    display: block;
+}
